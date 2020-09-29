@@ -1,0 +1,1396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    scroll-behavior: smooth;
+}
+
+:root {
+    --purple: #D328D3;
+    /* hover colour for buttons */
+    --dark_purple: #B21DB2;
+    /* base colour of buttons */
+    --gradient_purple: linear-gradient(#B21DB2, #ffffff);
+    --gradient_white: linear-gradient(#fff, #ffffff);
+    /* hover effects for cards */
+    --green: #246600;
+    --gray_bg: #EEEEEE;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+html {
+    font-size: 8px;
+    overflow-x: hidden;
+}
+
+header, main, footer {
+    display: block;
+    max-width: 100%;
+}
+
+/* THIS APPLIES FOR ALL PAGES */
+
+body h1 {
+    font-size: 6.5rem;
+}
+
+body h2 {
+    font-size: 4.5rem;
+    color: var(--green);
+}
+
+body h3 {
+    font-size: 2.5rem;
+}
+
+body h4 {
+    font-size: 2rem;
+}
+
+body h5 {
+    font-size: 1.8rem;
+}
+
+body p {
+    font-size: 2rem;
+}
+
+body header ul, body footer ul {
+    font-size: 1.8rem;
+}
+
+body a {
+    font-size: 1.5rem;
+}
+
+/*buttons can be h4*/
+
+/* COMMON BUTTON STYLING */
+
+/* Purple buttons */
+
+.btn_purple {
+    color: var(--white);
+    /* border: 1.5px solid var(--black); */
+    padding: 1vw 2vw;
+    background-color: var(--dark_purple);
+    box-shadow: 0px 4px 8px rgba(141, 58, 58, 0.25);
+}
+
+.btn_purple:hover {
+    background-color: var(--purple);
+    box-shadow: 0px 12px 24px rgba(138, 40, 138, 0.555);
+}
+
+/* SCROLL */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray_bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--purple);
+}
+
+/* SCROLL */
+
+/* for ALL buttons */
+
+.button {
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 120px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.article_active {
+    background-color: var(--gradient_purple);
+}
+
+/*LANDING PAGE*/
+
+/* NAVIGATION */
+
+.hide_mobile_info {
+    display: none;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 0 7vw;
+    background-color: rgba(128, 128, 128, 0.349);
+    top: 0;
+    justify-content: space-between;
+    z-index: 5;
+    /* turn into rgba and add opacity 0.35 */
+}
+
+nav:hover {
+    background-color: rgba(128, 128, 128, 0.8);
+}
+
+.home20 {
+    margin-right: 5rem;
+}
+
+.logo {
+    background-image: url(../images/logo_white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 15vw;
+}
+
+nav li a:hover {
+    background-color: var(--purple);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    /* position: relative;
+    left: 33vw; */
+}
+
+nav ul li {
+    display: contents;
+}
+
+nav ul li a {
+    text-align: center;
+    display: inline-block;
+    padding: 0.5vw 0.8vw;
+    font-size: 1vw;
+}
+
+#btnToggleMenu{
+    display: none;
+}
+
+
+/* Dropdown styling */
+
+nav.flex ul li a:hover {
+    background-color: var(--purple);
+}
+
+nav.flex .drop_down {
+    position: relative;
+    opacity: 1;
+    pointer-events: all;
+    background-color: rgba(128, 128, 128, 0.8);
+}
+
+nav.flex .drop_down ul {
+    position: absolute;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    top: 2.8vw;
+    right: 12vw;
+    background-color: rgba(128, 128, 128, 0.8);
+}
+
+/* nav.flex li ul  {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    top: 2.9vw;
+    left: 80vw;
+    background-color: rgba(128, 128, 128, 0.8);
+} */
+
+nav.flex li ul li a:hover {
+    background-color: var(--purple);
+}
+
+nav.flex li:hover>ul {
+    opacity: 1;
+    pointer-events: all;
+}
+
+nav.flex li ul li a {
+    font-size: 1.8rem;
+}
+
+/* Nav dropdown end*/
+
+.landing_page header {
+    background-image: url(../images/home_hero1.jpg);
+    height: 80vh;
+    background-attachment: fixed;
+}
+
+.gallery_page header {
+    background-image: url(../images/gallery_hero.jpg);
+    height: 50vh;
+}
+
+header, .programme header {
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    max-width: 100vw;
+}
+
+header section article {
+    width: 70vw;
+    position: unset;
+    margin: 0 auto;
+    padding-top: 10vw;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.hero_img h1 {
+    color: var(--white);
+    text-align: center;
+    font-weight: normal;
+    padding-top: 6vw;
+    /* transform: rotate(-10deg); */
+}
+
+/*programme page */
+
+#btn_show1 {
+    background-color: var(--purple);
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.teaser {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+video {
+    position: relative;
+    top: -13vh;
+    width: 100%;
+    height: unset;
+}
+
+.programme main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.programme h2 {
+    margin: 5% 0 5% 0;
+}
+
+.programme_buttons button {
+    background-color: var(--white);
+    color: black;
+    padding: 0.7vw 3vw;
+    border: none;
+    border-radius: 15px;
+    border: 1.5px var(--black) solid;
+    cursor: pointer;
+}
+
+.programme button:hover {
+    /*background-color: var(--purple);*/
+    /* border: 1px var(--grey) solid; */
+    color: white;
+    border: 1.5px var(--white) solid;
+}
+
+.programme button:active {
+    /*background-color: var(--dark_purple);*/
+}
+
+.programme_buttons {
+    justify-content: center;
+}
+
+.programme_buttons button {
+    margin: 0 3% 2% 3%;
+}
+
+.programme main img {
+    width: 250px;
+    height: 170px;
+}
+
+.band_list {
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.band_card {
+    width: 250px;
+    margin: 5%;
+    border-radius: 5px;
+    background-color: rgba(161, 161, 140, 0.151);
+    box-shadow: 0px 0px 40px -8px rgba(0, 0, 0, 0.75);
+    padding: 2%;
+}
+
+.band_card:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.card_container {
+    width: 300px;
+}
+
+.band_card img {
+    padding: 1vw;
+}
+
+.band_info {
+    justify-content: space-between;
+}
+
+.band_info p {
+    max-width: 100%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 0 6%;
+    text-transform: capitalize;
+}
+
+/*programme page */
+
+/* Section with 4 icons */
+
+.flex_article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 5vh;
+}
+
+.flex_article article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 8vh;
+}
+
+.flex_article article p {
+    padding-top: 5vh;
+}
+
+.festival_programme_body {
+    text-align: center;
+    width: 100%;
+    padding: 10vh 0;
+    background-color: var(--gray_bg);
+}
+
+.festival_programme {
+    color: var(--green);
+    font-size: 4.5rem;
+    text-align: center;
+}
+
+/* STYLING GRID BLOCKS */
+
+.grid_container_home {
+    display: grid;
+    grid-template-areas: "about_txt about_img""acc_img acc_txt""info_txt info_img";
+}
+
+.mobile_img {
+    display: none;
+}
+
+.grid_container img:hover {
+    transform: scale(1.1);
+    transition: all 0.6s ease-in-out;
+}
+
+.container_home {
+    width: 100vw;
+}
+
+/* defining grid areas */
+
+.about_text {
+    grid-area: about_txt;
+}
+
+.about_image {
+    grid-area: about_img;
+}
+
+.accomodation_text {
+    grid-area: acc_txt;
+}
+
+.accomodation_image {
+    grid-area: acc_img;
+}
+
+.information_text {
+    grid-area: info_txt;
+}
+
+.information_image {
+    grid-area: info_img;
+}
+
+.nav_footer {
+    grid-area: nav_footer;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.social {
+    grid-area: social;
+}
+
+.sponsors {
+    grid-area: sponsors;
+}
+
+.landing_text {
+    width: 50vw;
+    height: 30vw;
+    text-align: center;
+}
+
+.landing_text h2 {
+    padding: 5vw 0 3vw 0;
+    color: var(--green);
+}
+
+.landing_text p {
+    padding: 0 6vw 3vw 6vw;
+    text-align: left;
+}
+
+.grid_container_home .landing_text p:nth-child(3) {
+    padding-bottom: 6vw;
+}
+
+.landing_image {
+    width: 50vw;
+    height: 30vw;
+}
+
+.grid_container_home {
+    grid-template-areas: "about_txt about_img""acc_img acc_txt""info_txt info_img";
+}
+
+.landing_image img {
+    width: 50vw;
+    height: 30vw;
+}
+
+.action {
+    background-color: var(--gray_bg);
+    text-align: center;
+    height: 15vw;
+    width: 100vw;
+}
+
+.action h3 {
+    color: var(--dark_purple);
+    font-size: 3rem;
+    padding: 4vw 0;
+}
+
+.sign_up_btn {
+    color: var(--white);
+    background-color: var(--green);
+    padding: 1vw 6vw;
+}
+
+.sign_up_btn:hover {
+    background-color: green;
+}
+
+/*FOOTER*/
+
+.footer_grid {
+    padding: 5vh;
+    display: grid;
+    grid-template-areas: "nav_footer contact social""nav_footer contact social""nav_footer contact social""sponsors sponsors sponsors";
+}
+
+footer ul a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.instagram, .facebook {
+    font-size: 5rem;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsor_img {
+    margin-top: 2vh;
+}
+
+footer {
+    height: auto;
+    width: 100%;
+    background-color: rgb(109, 109, 109);
+}
+
+footer ul {
+    text-align: left;
+    margin: 0;
+    color: var(--white);
+}
+
+.footer_color {
+    color: var(--white);
+}
+
+.footer_color:hover {
+    color: #333;
+}
+
+ul li {
+    list-style-type: none;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+footer ul li a:hover {
+    color: #333;
+}
+
+/* I am not sure which is the most proper way to put space between the two icons */
+
+.fa-instagram {
+    margin-left: 20px;
+}
+
+/*GALLERY PAGE*/
+
+.gallery_headline {
+    padding-top: 22vh;
+}
+
+.img_size {
+    width: 300px;
+    height: 300px;
+    padding: 2%;
+}
+
+.hero_img_gallery {
+    background-image: url(../images/gallery_hero.jpg);
+    height: 50vh;
+}
+
+.gallery_headline {
+    color: var(--white);
+    text-align: center;
+}
+
+.grid_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: -4%;
+    background-color: #ffffff;
+    justify-content: center;
+}
+
+/*END OF GALLERY PAGE*/
+
+/* ---------------BEGINNING OF SIGN UP PAGE-------------*/
+
+h3 {
+    font-size: 4rem;
+    text-align: center;
+    /*margin-bottom: 6vh;*/
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    /*resize: vertical;*/
+}
+
+label {
+    padding: 12px 30px 12px 0;
+    display: inline-block;
+    font-size: 1.8rem;
+    float: right;
+}
+
+input[type=submit] {
+    background-color: var(--green);
+    width: 56%;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 4vh;
+}
+
+input[type=submit]:hover {
+    background-color: var(--green);
+}
+
+.form {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.form1 {
+    float: left;
+    width: 15%;
+    margin-top: 6px;
+}
+
+.form2 {
+    float: left;
+    width: 65%;
+    margin-top: 6px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.insertimg {
+    margin-top: 2%;
+}
+
+.position_button {
+    text-align: left;
+}
+
+input[value=Submit] {
+    font-size: 2rem;
+}
+
+input[value=Submit]:hover {
+    background-color: green;
+}
+
+input[type=submit] {
+    width: 18%;
+    display: block;
+    margin-left: 11vw;
+}
+
+#email, #phone, #date, #name, #subject, #genre, #stage, #date2, #phone2, #phone3, #email2, #name2, #subject2 {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+.important_sign_up {
+    display: flex;
+    padding: 12px 12px 12px 0;
+}
+
+.important_sign_up p {
+    margin-left: 12px;
+}
+
+.important_text {
+    color: red;
+}
+
+.band_sign_up {
+    padding: 5% 12% 2% 12%;
+}
+
+.band_sign_up h3 {
+    padding-bottom: 2vw;
+    color: var(--green);
+}
+
+/* ----------BEGGINNING OF INFO PAGE--------------- */
+
+/* Styling FAQ */
+
+#FAQ {
+    place-content: center;
+    margin-top: 2vw;
+    text-align: center;
+    padding-top: 1vw;
+}
+
+.faq_container {
+    display: flex;
+    margin: 2vw 0;
+    place-content: center;
+}
+
+.question {
+    background-color: var(--gray_bg);
+    color: var(--black);
+    cursor: pointer;
+    padding: 18px;
+    width: 40vw;
+    margin: 0 0 1vw 1vw;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+}
+
+.left_side .question {
+    border-radius: 25px 0 0 25px;
+}
+
+.right_side .question {
+    border-radius: 0 25px 20px 0;
+}
+
+.question_active, .question:hover {
+    background-color: var(--dark_purple);
+    color: var(--white);
+}
+
+.answer_box {
+    padding: 0 2vw;
+    background-color: var(--gray_bg);
+    width: 40vw;
+    margin: 0 0 0.5vw 1vw;
+    border-radius: 25px 0 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    text-align: left;
+}
+
+.answer_box p {
+    padding: 1vw 0;
+}
+
+.question:after {
+    content: '\002B';
+    color: var(--black);
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.question_active:after {
+    content: "\2212";
+    color: var(--white);
+}
+
+.right_side .answer_box {
+    border-radius: 0 25px 20px 0;
+}
+
+.about_goals .card_section .card_article p {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*-------------- Beginning of About Page-------------*/
+
+/*different images for different banners for sections*/
+
+.about_about {
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.h2_about {
+    padding-top: 15%;
+}
+
+.about_main main {
+    margin-top: 7vh;
+}
+
+.about_text_text {
+    text-align: initial;
+    margin-top: 5%;
+}
+
+.about_goals {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.about_goals_goals {
+    margin: 5% 0 3% 0;
+}
+
+.med_banner_img1 {
+    background-image: url(../images/aboutfest_ourgoals.jpg);
+}
+
+.med_banner_img2 {
+    background-image: url(../images/aboutfest_activities.jpg);
+}
+
+.med_banner_img3 {
+    background-image: url(../images/gallery_1.jpg);
+}
+
+.med_banner_img4 {
+    background-image: url(../images/info_accommodation.jpg);
+}
+
+.med_banner_img5 {
+    background-image: url(../images/info_stages.jpg);
+}
+
+.med_banner_img6 {
+    background-image: url(../images/gallery_1.jpg);
+}
+
+.medium_banner {
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-position: 0 20%;
+    background-repeat: no-repeat;
+}
+
+.card_section {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: -3%;
+}
+
+.card_section2 {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.card_article {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--gray_bg);
+    border-radius: 25px;
+    text-align: center;
+    padding: 1% 5%;
+    box-shadow: 0px 0px 40px -8px rgba(0, 0, 0, 0.75);
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.card_article h3 {
+    margin-top: 3%;
+}
+
+.card_article a {
+    margin-top: 10%;
+}
+
+.card_text_bg {
+    background-color: var(--gray_bg);
+    width: 92%;
+    margin: 0 auto;
+    margin-top: 3%;
+    padding: 5%;
+}
+
+.card_text_bg p {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 3%;
+    text-align: center;
+}
+
+.active {
+    background-color: var(--purple);
+}
+
+.none {
+    display: none;
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+    /*NAV*/
+
+    .hide_tablet {
+        display: none;
+    }
+
+    body h2 {
+        font-size: 3rem;
+    }
+    body p {
+        font-size: 1.5rem;
+    }
+    body h3 {
+        font-size: 4.5rem;
+    }
+    body a {
+        font-size: 1.8rem;
+    }
+    .footer_grid {
+        padding: 3vw;
+    }
+    /* BEGGINING OF LANDING PAGE */
+    .landing_page header {
+        height: 45vh;
+        background-attachment: inherit;
+    }
+    .festival_programme {
+        font-size: 3.3rem;
+    }
+    .hero_img h1 {
+        font-size: 5rem;
+        padding-top: 15vw;
+    }
+    header section article {
+        padding-top: 5vw;
+    }
+    .festival_programme_body {
+        padding: 4vh;
+    }
+    .flex_article {
+        height: 20vh;
+    }
+    .flex_article article p {
+        padding-top: 3vw;
+        font-size: 2.2rem;
+    }
+    .landing_text h2 {
+        padding: 3vw 0 2vw 0;
+    }
+    .grid_container_home .landing_text p:nth-child(3) {
+        padding-bottom: 3vw;
+    }
+    .action {
+        height: 20vw;
+    }
+    /* ---------------BEGINNING OF SIGN UP PAGE-------------*/
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 40px;
+    }
+    label {
+        font-size: 1.8rem;
+        float: left;
+    }
+    input[type=submit] {
+        width: 60%;
+        margin-top: 0;
+        margin-left: 30%;
+    }
+    .form1 {
+        width: 30%;
+    }
+    .form2 {
+        float: left;
+        width: 62%;
+        margin-top: 6px;
+    }
+    input[value=Submit] {
+        font-size: 2.5rem;
+    }
+    h3#accommodation_sign_up {
+        margin-top: 8%;
+    }
+/* ----------BEGGINNING OF INFO PAGE--------------- */
+    .info_body_mobile {
+        display: flex;
+        flex-direction: column;
+    }
+    .medium_banner {
+        background-position: 70% 0;
+        height: 20vh;
+    }
+    .card_section, .card_section2 {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .card_article {
+        margin: 0 auto 5% auto;
+        width: 70%;
+    }
+    .btn_purple {
+        padding: 1.5% 4%;
+    }
+    .stages_mobile .fa-5x {
+        font-size: 0;
+        padding-top: 0;
+    }
+    .fa-5x {
+        font-size: 3.5rem;
+    }
+    .card_article a {
+        margin: 1%;
+    }
+    .card_text_bg {
+        width: 100%;
+        margin: 0;
+    }
+    .card_text_bg p {
+        width: 90%;
+        text-align: left;
+    }
+    .FAQ {
+        width: 100%;
+    }
+    .question {
+        width: 45vw;
+        height: 10vw;
+        font-size: 2.45rem;
+    }
+    .about_goals #accomodation {
+        margin-top: 5%;
+    }
+    .about_goals_goals {
+        margin: 0 0 5% 0;
+    }
+    /* ABOUT PAGE STARTS HERE */
+    .fa-5x {
+        margin-top: 3%;
+    }
+    .about_about {
+        width: 65%;
+    }
+    .h2_about {
+        padding-top: 5%;
+    }
+    /* Gallery  */
+    .gallery_headline {
+        padding-top: 15vh;
+    }
+    .gallery_page header {
+        height: 30vh;
+    }
+    .teaser {
+        height: 30vh;
+    }
+}
+
+@media (max-width:767px) {
+    nav {
+        background-color: rgb(128, 128, 128);
+    }
+
+    body h2 {
+        font-size: 2.8rem;
+    }
+    body p {
+        font-size: 1.5rem;
+    }
+    body h3 {
+        font-size: 2.2rem;
+    }
+    body a {
+        font-size: 1.2rem;
+    }
+    .fas {
+        padding-top: 3%;
+    }
+
+    /* burger menu */
+.none{
+    display: none;
+}
+
+.hide{
+    display: none;
+}
+
+header {
+    margin-top: 7vh;
+}
+
+header nav {
+    height: 7vh;
+}
+
+.logo{
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0% 25%;
+}
+
+.fa-bars{
+    color: var(--white);
+    background-color: transparent;
+}
+
+#btnToggleMenu {
+    display: inline-block;
+}
+
+.bm{
+    border: none;
+    position: relative;
+    top: 0;
+    font-size: 26px;
+}
+
+
+header ul{
+    position: absolute;
+    width: 100%;
+    background-color: rgb(128, 128, 128);
+    margin-top: 7vh;
+    margin-left: calc(-7% - 1px);
+    display: block;
+    height: fit-content;
+}
+
+header ul li{
+    width: 100%;   
+}
+
+header ul li a{
+    width: 100%;
+    border-bottom: 1px solid var(--white);
+    padding: 3.5% 0;
+    font-size: 1.5rem;
+}
+
+ .hide_pc_info {
+    display: none;
+} 
+
+ .hide_mobile_info {
+     display: block;
+ }
+
+
+
+    /* BEGGINING OF LANDING PAGE */
+    .landing_page header {
+        height: 25vh;
+        background-attachment: inherit;
+    }
+    .hero_img h1 {
+        font-size: 2rem;
+        padding-top: 12vw;
+    }
+    .festival_programme {
+        font-size: 2.8rem;
+    }
+    .festival_programme_body {
+        padding: 4vh;
+    }
+    .flex_article {
+        height: 14vh;
+    }
+    .flex_article article p {
+        padding-top: 3vw;
+        font-size: 1.2rem;
+    }
+    .fa-7x {
+        font-size: 3.5em;
+        margin-top: 1vw;
+    }
+    .grid_container_home {
+        display: grid;
+        grid-template-areas: 
+        "about_img" 
+        "about_txt" 
+        "acc_img" 
+        "acc_txt" 
+        "info_img"
+        "info_txt"; 
+    }
+    .landing_text {
+        width: 100vw;
+        height: 50vw;
+        margin-bottom: 5vw;
+    }
+    .landing_image {
+        width: 100vw;
+        height: 45vw;
+    }
+    .landing_image img {
+        width: 100%;
+        height: 45vw;
+    }
+    .desktop_img {
+        display: none;
+    }
+    .mobile_img {
+        display: block;
+    }
+    .grid_container_home .landing_text p:nth-child(3) {
+        padding-bottom: 5vw;
+    }
+    .action {
+        height: 40vw;
+    }
+    .action h3 {
+        font-size: 2.2rem;
+        padding: 10vw 0;
+    }
+    /* About page */
+    .about_about {
+        width: 90%;
+    }
+    .h2_about {
+        padding-top: 5%;
+    }
+    /* Programme */
+    .programme h2 {
+        font-size: 4rem;
+    }
+    .programme button {
+        font-size: 26px;
+    }
+    video {
+        top: 0;
+    }
+    .teaser {
+        height: 20vh;
+    }
+    /* Programme */
+    /*INFO PAGE*/
+    .info_body_mobile {
+        display: flex;
+        flex-direction: column;
+    }
+    .medium_banner {
+        background-position: 70% 0;
+        height: 20vh;
+    }
+    .card_section, .card_section2 {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .card_article {
+        margin: 0 auto 5% auto;
+        width: 100%;
+    }
+    .btn_purple {
+        padding: 1.5% 4%;
+    }
+    .stages_mobile .fa-5x {
+        font-size: 0;
+        padding-top: 0;
+    }
+    .fa-5x {
+        font-size: 5rem;
+    }
+    .card_article a {
+        margin: 1%;
+    }
+    .card_text_bg {
+        width: 100%;
+        margin: 0;
+    }
+    .card_text_bg p {
+        width: 90%;
+        text-align: left;
+    }
+    .FAQ {
+        width: 100%;
+    }
+    .question {
+        width: 45vw;
+        height: 26vw;
+    }
+    /*GALLERY PAGE*/
+    .grid_container {
+        width: 100%;
+    }
+    .img_size {
+        width: 100%;
+        height: auto;
+        padding: 10% 10% 0 10%;
+    }
+    /* ---------------BEGINNING OF SIGN UP PAGE-------------*/
+    body h3 {
+        font-size: 3.5rem;
+    }
+    h3#accommodation_sign_up {
+        margin-top: 25%;
+    }
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 40px;
+    }
+    label {
+        font-size: 1.8rem;
+        float: left;
+    }
+    .form1, .form2, input[type=submit] {
+        width: 100%;
+        margin-top: 1;
+        margin-left: 0%;
+    }
+    #subject {
+        padding: 20px;
+        padding: 12px 0 20px 0;
+    }
+    .insertimg {
+        max-width: 100%;
+    }
+    label {
+        padding: 6px 0 3px 0;
+    }
+    input[value=Submit] {
+        font-size: 2rem;
+    }
+    input[type=submit] {
+        margin-left: 2%;
+        width: 98%;
+    }
+    /* Footer page starts here */
+    .footer_grid {
+        padding: 5vh;
+        display: grid;
+        grid-template-areas: 
+        "social social"
+        "contact contact"
+        "sponsors sponsors";
+    }
+    .nav_footer {
+        display: none;
+    }
+    footer ul a {
+        font-size: 13px;
+    }
+    .item {
+        justify-content: center;
+    }
+    .contact {
+        padding-top: 4vw;
+        margin: 2% 0;
+    }
+}
